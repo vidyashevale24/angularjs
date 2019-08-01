@@ -32,7 +32,8 @@ myApp.controller('mainCtrl', function ($scope ,$log ,$filter ,$resource) {
 
 var myApp = angular.module('myApp', ['ngMessages','ngResource']);
 myApp.controller('mainCtrl', ['$scope' ,'$log', '$filter' ,'$resource' ,'$timeout' ,function( $scope ,$log, $filter ,$resource ,$timeout) {
-    
+    $scope.characters = 10;
+	
     $scope.name = 'Vidya';
     $scope.occupation = 'Software Developer';
     
@@ -40,6 +41,28 @@ myApp.controller('mainCtrl', ['$scope' ,'$log', '$filter' ,'$resource' ,'$timeou
         $scope.name = 'Sagar';
     },3000);
     
+    $scope.handle = '';
+    
+   
+    $scope.lowercaseHandel=      function(){   
+        return $filter('lowercase')($scope.handle);
+    }
+    
+	//Understanding watch function
+    $scope.$watch('handle',function(newValue, oldValue){
+        console.log("CHanged");
+        console.log("oldValue :  "+oldValue);
+        console.log("newValue:  "+newValue);
+      
+    });
+	
+	//Understanding apply function
+	/*setTimeout(function(){
+		$scope.$apply(function(){
+			$scope.handle="newTwitterHandlle";
+			console.log("Scope Changed")
+		});
+	},3000);*/
 }]);
 
 //Compressed code of above 

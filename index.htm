@@ -40,10 +40,9 @@
           </ul>
             <div ng-controller="mainCtrl">
                 <h1>Login</h1>
-                <h2>Hello {{ name + ' How are you?' }}</h2>
-            </div>
-            
-            <form name="myForm">
+               <!-- <h2>Hello {{ name + ' How are you?' }}</h2>-->
+             
+            <!--<form name="myForm">
                 <div class="form-group">
                   <label for="usr">Email:</label>
                   <input class ="form-control" type="email" ng-model="field" name="usr" required maxlength="25" id="usr"/>
@@ -58,9 +57,19 @@
                   <div class="alert alert-danger" ng-message="email">This field must be a valid email address.</div>
                   <div class="alert alert-danger" ng-message="maxlength">This field can be at most 25 characters long.</div>
                 </div>
-                
-                
-            </form>   
+            </form> --> 
+            
+            <input type="text" name="handledBy" class="form-control" ng-model="handle"/>
+				<hr/>
+			<div class="alert" ng-class="{ 'alert-danger':handle.length < characters , 'alert-info':handle.length > chharacters}" ng-if="handle.length!==characters">
+				<strong>Message</strong> Mobile number should be 10 digit long.
+			 </div>
+				
+			 <!--<div class="alert alert-danger" ng-if="handle.length!==characters">
+				<strong>Danger!</strong> Mobile number should be 10 digit long.
+			 </div>-->
+            
+            <!--Twitter Handled By {{ lowercaseHandel() }}-->
         </div>
    </body>
 </html>

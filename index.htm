@@ -39,8 +39,18 @@
             </li>
           </ul>
             <div ng-controller="mainCtrl">
-                <h1>Login</h1>
-               <!-- <h2>Hello {{ name + ' How are you?' }}</h2>-->
+				
+				<hr/>
+				<ul>
+					<li ng-repeat="rule in rules track by $index">{{ rule }} </li>
+				</ul>
+				<hr/>
+				<input type="text" class="form-control col-sm-3" name="newRule" ng-model="newRule"/><br/>
+				<input type="button" class="btn btn-success" value="Add Rule" ng-click="AddRule()">
+				
+                <!-- 
+				<h1>Login</h1>
+               <h2>Hello {{ name + ' How are you?' }}</h2>-->
              
             <!--<form name="myForm">
                 <div class="form-group">
@@ -57,7 +67,7 @@
                   <div class="alert alert-danger" ng-message="email">This field must be a valid email address.</div>
                   <div class="alert alert-danger" ng-message="maxlength">This field can be at most 25 characters long.</div>
                 </div>
-            </form> --> 
+            </form> 
             
             <input type="text" name="handledBy" class="form-control" ng-model="handle" />
 				<hr/>
@@ -87,6 +97,10 @@
 			 </div>-->
             
             <!--Twitter Handled By {{ lowercaseHandel() }}-->
+			<!--<hr/>
+				<input type="button" class="btn btn-primary" value="Submit" ng-click="btnClicked()"/>
+				-->
+				
         </div>
    </body>
 </html>

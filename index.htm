@@ -59,10 +59,23 @@
                 </div>
             </form> --> 
             
-            <input type="text" name="handledBy" class="form-control" ng-model="handle"/>
+            <input type="text" name="handledBy" class="form-control" ng-model="handle" />
 				<hr/>
-			<div class="alert" ng-class="{ 'alert-danger':handle.length < characters , 'alert-info':handle.length > chharacters}" ng-if="handle.length!==characters">
-				<strong>Message</strong> Mobile number should be 10 digit long.
+			<div class="alert" 
+				 ng-class="{ 
+							 'alert-warning':handle.length < characters , 
+							 'alert-danger':handle.length > characters
+						   }" 
+				 ng-show="handle.length!==characters">
+				
+				<div ng-show="handle.length < characters ">
+					<strong>Message</strong> You have less than 10 Characters 
+				</div>
+				
+				<div ng-show="handle.length > characters ">
+					<strong>Message</strong>  You have more than 10 Characters 
+				</div>
+				
 			 </div>
 				
 			 <!--<div class="alert alert-danger" ng-if="handle.length!==characters">

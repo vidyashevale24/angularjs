@@ -61,7 +61,7 @@
             
             <input type="text" name="handledBy" class="form-control" ng-model="handle" />
 				<hr/>
-			<div class="alert" 
+			 <div class="alert" 
 				 ng-class="{ 
 							 'alert-warning':handle.length < characters , 
 							 'alert-danger':handle.length > characters
@@ -75,8 +75,12 @@
 				<div ng-show="handle.length > characters ">
 					<strong>Message</strong>  You have more than 10 Characters 
 				</div>
-				
 			 </div>
+			
+			<h2>Rules</h2>
+			<ul>
+				<li ng-repeat="rule in rules">{{ rule.rulename }} </li>
+			</ul>
 				
 			 <!--<div class="alert alert-danger" ng-if="handle.length!==characters">
 				<strong>Danger!</strong> Mobile number should be 10 digit long.

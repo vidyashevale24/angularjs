@@ -33,8 +33,14 @@ myApp.controller('mainCtrl', function ($scope ,$log ,$filter ,$resource) {
 var myApp = angular.module('myApp', ['ngMessages','ngResource']);
 myApp.controller('mainCtrl', ['$scope' ,'$log', '$filter' ,'$resource' ,'$timeout' ,function( $scope ,$log, $filter ,$resource ,$timeout) {
     $scope.characters = 10;
+	$scope.rules = [
+		{	rulename : "Must be 10 charactes" 	},
+		{	rulename : "Must not be used elsewhere" 	},
+		{	rulename : "Must be character" 	}
+	];
+	console.log($scope.rules);
 	
-    $scope.name = 'Vidya';
+    /*$scope.name = 'Vidya';
     $scope.occupation = 'Software Developer';
     
     $timeout(function(){
@@ -54,7 +60,7 @@ myApp.controller('mainCtrl', ['$scope' ,'$log', '$filter' ,'$resource' ,'$timeou
         console.log("oldValue :  "+oldValue);
         console.log("newValue:  "+newValue);
       
-    });
+    });*/
 	
 	//Understanding apply function
 	/*setTimeout(function(){

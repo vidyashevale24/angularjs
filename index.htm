@@ -11,14 +11,19 @@
           <script src="js/angular.min.js"></script>
           <script src="https://code.angularjs.org/1.7.0-rc.0/angular-messages.min.js"></script>
           <script src="https://code.angularjs.org/1.7.0-rc.0/angular-resource.min.js"></script>
-          <script src="js/app.js"></script>
+          <script src="https://code.angularjs.org/1.7.0-rc.0/angular-route.min.js"></script>
+		
+		<!--<script src="https://code.angularjs.org/1.5.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.9/angular-route.js"></script>-->
+         <!-- <script src="js/app.js"></script>-->
+          <script src="js/main.js"></script>
     </head>
  
     <body>
         <div class="container">
           <h2>AngularJS</h2>
           <ul class="nav nav-tabs">
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link active" href="#">Login</a>
             </li>
             <li class="nav-item dropdown">
@@ -27,26 +32,33 @@
                 <a class="dropdown-item" href="#">Link1</a>
                 <a class="dropdown-item" href="#">Link2</a>
                 <a class="dropdown-item" href="#">Link3</a></div>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="#">About Us</a>
             </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Register</a>
+              <a class="nav-link" href="#/cont">Contact Us</a>
             </li>
+            <!--<li class="nav-item">
+              <a class="nav-link disabled" href="#">Register</a>
+            </li>-->
           </ul>
-            <div ng-controller="mainCtrl">
-				
-				<hr/>
+			
+			<div ng-view></div>
+            <!--<div ng-controller="mainCtrl">
+				<h1>hii</h1>
+			</div>
+			
+			<div ng-controller="contactCtrl">
+				<h1>hii Vidya</h1>
+			</div>-->
+				<!--<hr/>
 				<ul>
 					<li ng-repeat="rule in rules track by $index">{{ rule }} </li>
 				</ul>
 				<hr/>
 				<input type="text" class="form-control col-sm-3" name="newRule" ng-model="newRule"/><br/>
-				<input type="button" class="btn btn-success" value="Add Rule" ng-click="AddRule()">
+				<input type="button" class="btn btn-success" value="Add Rule" ng-click="AddRule()">-->
 				
                 <!-- 
 				<h1>Login</h1>
@@ -101,6 +113,7 @@
 				<input type="button" class="btn btn-primary" value="Submit" ng-click="btnClicked()"/>
 				-->
 				
+			
         </div>
    </body>
 </html>

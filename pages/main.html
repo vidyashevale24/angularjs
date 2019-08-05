@@ -3,7 +3,7 @@
 
 <input type="text" value="vidya" />
 
-<div class="list-group">
+<!--<div class="list-group">-->
 	<!--<div class ="search-result"></div>-->
 	
 	<!--Method 1 -->
@@ -17,7 +17,14 @@
 	<!--<search-result person-object="person" ></search-result>-->
 	
 	<!--Method 4-->
-	<search-result person-object="person" formatted-address-function="formattedAddress(aperson)"></search-result>
+	<!--<search-result person-object="person" formatted-address-function="formattedAddress(aperson)"></search-result>
+</div>-->
+
+<!-- Repeat Directive -->
+<div class="list-group" >
+	<search-result person-object="person" formatted-address-function="formattedAddress(aperson)" ng-repeat="person in people">
+		*search results may not be valid
+	</search-result>
 </div>
  
 

@@ -13,5 +13,10 @@
 
 <!--Method 4-->
 <a href="#" class="list-group-item list-group-item-action">{{ personObject.name }}</a>
-<a href="#" class="list-group-item list-group-item-action">{{ formattedAddressFunction({aperson:personObject}) }}</a>
+<a href="#" class="list-group-item list-group-item-action">
+	<p>{{ formattedAddressFunction({aperson:personObject}) }}</p>
+	<small ng-transclude>
+		<!--<ng-transclude></ng-transclude>-->
+	</small>
+</a>
 

@@ -30,9 +30,11 @@ myApp.service('nameService',function(){
 });
 
 myApp.controller('mainCtrl',['$scope','$log','nameService',function($scope,$log,nameService){
+	
 	/*$scope.name = "Main";
 	$log.main = "property from main";
 	$log.log($log);*/
+	
 	$scope.name = nameService.name;
 	$scope.$watch('name',function(){
 		nameService.name = $scope.name;
@@ -41,11 +43,32 @@ myApp.controller('mainCtrl',['$scope','$log','nameService',function($scope,$log,
 	$log.log (nameService.name);
 	$log.log (nameService.nameLength());
 	
-	$scope.person = {
-		name:"Vidya Sagar",
-		gender:"Female",
-		address:"Goa , Mhapusa, 503708"
-	}
+	$scope.person = 
+			{
+			name:"Vidya Sagar",
+			gender:"Female",
+			address:"Goa , Mhapusa, 503708"
+		},
+		
+	$scope.people = 
+		[
+			{
+			name:"Vidya Sagar",
+			gender:"Female",
+			address:"Goa , Mhapusa, 503708"
+		},
+		{
+			name:"Sagar",
+			gender:"Male",
+			address:"Goa , Mhapusa, 503708"
+		},
+		{
+			name:"Pradeep ",
+			gender:"Male",
+			address:"Pune , katraj"
+		},
+	];
+		
 	
 	$scope.formattedAddress = function(person){
 		return 	person.address +', '+ person.gender;
@@ -79,10 +102,42 @@ myApp.directive("searchResult",function(){
 		/*scope:{
 			personObject:"=",
 		}*/
-		scope:{
+		scope: {
 			personObject:"=",
 			formattedAddressFunction:"&"
-		}
+		},
+		
+		/*compile: function (elem ,attrs){
+			console.log('compiling...');
+			//elem.removeAttr('class');
+			//console.log(elem.html());
+			console.log(elem);
+			return {
+				pre: function(scope , elements , attrs){
+					console.log("Pre Linking");
+					console.log(elements);
+				},
+				post: function(scope , elements, attrs){
+					console.log("Post Linking");
+					console.log(scope);
+					if(scope.personObject.name == 'Sagar'){
+						elements.removeAttr('class');
+					} 
+					console.log(elements);
+				}
+			}
+		},
+		*/
+		/*link: function (scope ,elements ,attrs){
+			console.log("Linking");
+			console.log(scope.personObject.name);
+			if(scope.personObject.name == 'Sagar'){
+				elements.removeAttr('class');
+			} 
+			console.log(elements);
+		}*/
+		transclude:true
+		
 	}
 });
 

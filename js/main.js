@@ -40,6 +40,16 @@ myApp.controller('mainCtrl',['$scope','$log','nameService',function($scope,$log,
 	
 	$log.log (nameService.name);
 	$log.log (nameService.nameLength());
+	
+	$scope.person = {
+		name:"Vidya Sagar",
+		gender:"Female",
+		address:"Goa , Mhapusa, 503708"
+	}
+	
+	$scope.formattedAddress = function(person){
+		return 	person.address +', '+ person.gender;
+	}
 }]);
 
 myApp.controller('contactCtrl',['$scope','$log','$routeParams','nameService',function($scope,$log,$routeParams,nameService){
@@ -54,6 +64,27 @@ myApp.controller('contactCtrl',['$scope','$log','$routeParams','nameService',fun
 		nameService.name = $scope.name;
 	});
 }]);
+
+myApp.directive("searchResult",function(){
+	return{
+		restrict: 'AECM',
+		templateUrl:'directives/template.html',
+		//replace:false
+		/*scope:{
+			},*/
+		/*scope:{
+			personName:'@',
+			personAddress:'@'
+		}*/
+		/*scope:{
+			personObject:"=",
+		}*/
+		scope:{
+			personObject:"=",
+			formattedAddressFunction:"&"
+		}
+	}
+});
 
 
 

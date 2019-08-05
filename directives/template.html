@@ -1,0 +1,17 @@
+
+<!--Method 1-->
+<!--<a href="#" class="list-group-item list-group-item-action">{{ person.name }}</a>
+<a href="#" class="list-group-item list-group-item-action">{{ person.address }}</a>-->
+
+<!--Method 2-->
+<!--<a href="#" class="list-group-item list-group-item-action">{{ personName }}</a>
+<a href="#" class="list-group-item list-group-item-action">{{ personAddress }}</a>-->
+
+<!--Method 3-->
+<!--<a href="#" class="list-group-item list-group-item-action">{{ personObject.name }}</a>
+<a href="#" class="list-group-item list-group-item-action">{{ personObject.address }}</a>-->
+
+<!--Method 4-->
+<a href="#" class="list-group-item list-group-item-action">{{ personObject.name }}</a>
+<a href="#" class="list-group-item list-group-item-action">{{ formattedAddressFunction({aperson:personObject}) }}</a>
+

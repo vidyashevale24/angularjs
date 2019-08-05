@@ -1,2 +1,24 @@
 <h1>Main template</h1>
 <input type="text" ng-model="name"/>
+
+<input type="text" value="vidya" />
+
+<div class="list-group">
+	<!--<div class ="search-result"></div>-->
+	
+	<!--Method 1 -->
+	<!--<search-result person-name="{{ person.name}}" person-address="{{ person.address }}"></search-result>-->
+	
+	<!--Method 2 -->
+	<!--<search-result person-name="{{ person.name}}" person-address="{{ person.address }}"></search-result>
+	-->
+	
+	<!--Method 3 -->
+	<!--<search-result person-object="person" ></search-result>-->
+	
+	<!--Method 4-->
+	<search-result person-object="person" formatted-address-function="formattedAddress(aperson)"></search-result>
+</div>
+ 
+
+ 
